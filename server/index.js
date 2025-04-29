@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
 
-const staticPath = path.join(__dirname, "../client/dist");
+const staticPath = path.join(__dirname, "./dist");
 app.use(express.static(staticPath));
 app.get("*", (req, res) => {
   res.sendFile(path.join(staticPath, "index.html"));
